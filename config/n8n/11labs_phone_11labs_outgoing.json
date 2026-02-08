@@ -1,0 +1,42 @@
+{
+  "name": "Outgoing Call → 11Labs Voice",
+  "description": "Make outgoing calls with 11Labs voice",
+  "trigger": {
+    "type": "schedule",
+    "cron": "0 9 * * *"
+  },
+  "nodes": [
+    {
+      "name": "Get Call List",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "// Get list of calls to make\nreturn [{ json: { phone: '+1234567890', message: 'Your appointment reminder' } }];"
+      }
+    },
+    {
+      "name": "11Labs Generate Audio",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "https://api.elevenlabs.io/v1/text-to-speech/{{ $env.ELEVENLABS_VOICE_ID_PHONE }}",
+        "method": "POST",
+        "headerParameters": {
+          "xi-api-key": "={{ $env.ELEVENLABS_API_KEY }}"
+        },
+        "bodyParameters": {
+          "text": "={{ $json.message }}",
+          "model_id": "eleven_multilingual_v2"
+        }
+      }
+    },
+    {
+      "name": "Twilio Make Call",
+      "type": "n8n-nodes-base.twilio",
+      "parameters": {
+        "operation": "makeCall",
+        "to": "={{ $json.phone }}",
+        "from": "={{ $env.TWILIO_PHONE_NUMBER }}",
+        "url": "http://10.17.17.32:5678/webhook/twilio/play-audio"
+      }
+    }
+  ]
+}

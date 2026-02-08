@@ -1,0 +1,113 @@
+{
+    "version":  "1.0.0",
+    "name":  "Lumina Company Configuration",
+    "description":  "Customize Lumina to represent your company - Single Source of Truth for company branding",
+    "last_updated":  "2025-01-24",
+    "ssot":  true,
+    "ssot_location":  "config/lumina_company_config.json",
+    "company":  {
+                    "name":  "Cedarbrook Financial Services LLC",
+                    "legal_name":  "Cedarbrook Financial Services LLC",
+                    "short_name":  "CFS",
+                    "domain":  "cedarbrook.financial",
+                    "email_domain":  "@cedarbrook.financial",
+                    "website":  "https://cedarbrook.financial",
+                    "description":  "Financial services company using Lumina for AI-powered operations",
+                    "industry":  "Financial Services",
+                    "sector":  "Financial Technology"
+                },
+    "branding":  {
+                     "internal":  {
+                                      "enabled":  true,
+                                      "maintainer":  "Cedarbrook Financial Services LLC",
+                                      "container_prefix":  "cfs",
+                                      "volume_prefix":  "cfs",
+                                      "network_prefix":  "cfs",
+                                      "image_prefix":  "cedarbrook",
+                                      "description_suffix":  "for Cedarbrook Financial Services",
+                                      "use_company_name":  true
+                                  },
+                     "public":  {
+                                    "enabled":  true,
+                                    "maintainer":  "Lumina Project",
+                                    "container_prefix":  "lumina",
+                                    "volume_prefix":  "lumina",
+                                    "network_prefix":  "lumina",
+                                    "image_prefix":  "lumina",
+                                    "description_suffix":  "for Lumina",
+                                    "use_company_name":  false
+                                },
+                     "active_mode":  "internal"
+                 },
+    "docker":  {
+                   "internal":  {
+                                    "maintainer":  "Cedarbrook Financial Services LLC",
+                                    "container_names":  {
+                                                            "ollama_primary":  "cfs-ollama-primary",
+                                                            "ollama_secondary":  "cfs-ollama-secondary",
+                                                            "ollama_tertiary":  "cfs-ollama-tertiary",
+                                                            "loadbalancer":  "cfs-llm-loadbalancer"
+                                                        },
+                                    "volumes":  {
+                                                    "ollama_data":  "cfs-ollama-data"
+                                                },
+                                    "networks":  {
+                                                     "llm_cluster":  "cfs-llm-cluster"
+                                                 },
+                                    "images":  {
+                                                   "prefix":  "cedarbrook",
+                                                   "ollama":  "cedarbrook/ollama:latest"
+                                               }
+                                },
+                   "public":  {
+                                  "maintainer":  "Lumina Project",
+                                  "container_names":  {
+                                                          "ollama_primary":  "lumina-ollama-primary",
+                                                          "ollama_secondary":  "lumina-ollama-secondary",
+                                                          "ollama_tertiary":  "lumina-ollama-tertiary",
+                                                          "loadbalancer":  "lumina-llm-loadbalancer"
+                                                      },
+                                  "volumes":  {
+                                                  "ollama_data":  "lumina-ollama-data"
+                                              },
+                                  "networks":  {
+                                                   "llm_cluster":  "lumina-llm-cluster"
+                                               },
+                                  "images":  {
+                                                 "prefix":  "lumina",
+                                                 "ollama":  "lumina/ollama:latest"
+                                             }
+                              }
+               },
+    "llm_cluster":  {
+                        "name":  "llama3.2:3b",
+                        "description":  "Local LLM cluster for Cedarbrook Financial Services - Integrated with Lumina",
+                        "endpoint":  "http://localhost:3000",
+                        "ports":  {
+                                      "loadbalancer":  3000,
+                                      "primary":  3001,
+                                      "secondary":  3002,
+                                      "tertiary":  3003
+                                  },
+                        "models":  {
+                                       "primary":  "codellama:13b",
+                                       "secondary":  "llama3.2:11b",
+                                       "lightweight":  "qwen2.5-coder:1.5b-base"
+                                   }
+                    },
+    "integration":  {
+                        "lumina_integration":  true,
+                        "description":  "Lumina is customized for Cedarbrook Financial Services LLC. The local LLM cluster is integrated with Lumina and branded for internal company use.",
+                        "public_facing":  "All public-facing materials (GitHub, VS Code extensions) use Lumina Project branding",
+                        "internal_use":  "All internal configurations use Cedarbrook Financial Services LLC branding"
+                    },
+    "_metadata":  {
+                      "documentation":  "docs/system/LUMINA_COMPANY_CUSTOMIZATION.md",
+                      "script":  "scripts/python/customize_lumina_company.py",
+                      "consumers":  [
+                                        "scripts/python/customize_lumina_company.py",
+                                        "scripts/powershell/apply-company-branding.ps1"
+                                    ],
+                      "notes":  "This file allows customization of Lumina for your company. Set active_mode to \u0027internal\u0027 for company branding, \u0027public\u0027 for Lumina Project branding."
+                  }
+}

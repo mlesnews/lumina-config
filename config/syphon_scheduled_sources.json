@@ -1,0 +1,302 @@
+{
+  "sources": [
+    {
+      "source_id": "filesystems",
+      "source_type": "internal",
+      "source_name": "Filesystems",
+      "source_category": "filesystem",
+      "enabled": true,
+      "priority": 1,
+      "schedule_interval_hours": 24,
+      "last_syphon": null,
+      "metadata": {
+        "description": "Internal filesystem sources - FIRST PRIORITY",
+        "tags": [
+          "#internal",
+          "#filesystem"
+        ]
+      }
+    },
+    {
+      "source_id": "email_gmail",
+      "source_type": "internal",
+      "source_name": "Gmail",
+      "source_category": "email",
+      "enabled": true,
+      "priority": 2,
+      "schedule_interval_hours": 6,
+      "last_syphon": null,
+      "metadata": {
+        "description": "Gmail email source - external",
+        "tags": [
+          "#email",
+          "#gmail",
+          "#internal",
+          "#marvin"
+        ],
+        "marvin_task": "marvin_email_gmail_intelligence"
+      }
+    },
+    {
+      "source_id": "email_protonmail",
+      "source_type": "internal",
+      "source_name": "ProtonMail",
+      "source_category": "email",
+      "enabled": true,
+      "priority": 2,
+      "schedule_interval_hours": 6,
+      "last_syphon": null,
+      "metadata": {
+        "description": "ProtonMail email source - external",
+        "tags": [
+          "#email",
+          "#protonmail",
+          "#internal",
+          "#marvin"
+        ],
+        "marvin_task": "marvin_email_protonmail_intelligence"
+      }
+    },
+    {
+      "source_id": "email_nas_hub",
+      "source_type": "internal",
+      "source_name": "NAS Email Hub",
+      "source_category": "email",
+      "enabled": true,
+      "priority": 2,
+      "schedule_interval_hours": 5,
+      "last_syphon": null,
+      "metadata": {
+        "description": "NAS email hub (email-hub.lesnewski.local) - external",
+        "host": "email-hub.lesnewski.local",
+        "n8n_webhook": "http://10.17.17.32:5678/webhook/email/hub/receive",
+        "tags": [
+          "#email",
+          "#nas",
+          "#email-hub",
+          "#internal",
+          "#marvin"
+        ],
+        "marvin_task": "marvin_email_nas_hub_intelligence"
+      }
+    },
+    {
+      "source_id": "financial_personal",
+      "source_type": "internal",
+      "source_name": "Personal Financial Accounts",
+      "source_category": "financial",
+      "enabled": true,
+      "priority": 3,
+      "schedule_interval_hours": 24,
+      "last_syphon": null,
+      "metadata": {
+        "description": "Personal financial accounts - external",
+        "tags": [
+          "#financial",
+          "#personal",
+          "#internal",
+          "#marvin"
+        ],
+        "marvin_task": "marvin_financial_personal_intelligence"
+      }
+    },
+    {
+      "source_id": "financial_business",
+      "source_type": "internal",
+      "source_name": "Business Financial Accounts",
+      "source_category": "financial",
+      "enabled": true,
+      "priority": 3,
+      "schedule_interval_hours": 24,
+      "last_syphon": null,
+      "metadata": {
+        "description": "Business financial accounts (CEDARBROOK-FINANCIAL-SERVICES-LLC) - external",
+        "company": "CEDARBROOK-FINANCIAL-SERVICES-LLC",
+        "tags": [
+          "#financial",
+          "#business",
+          "#cedarbrook-financial-services-llc",
+          "#internal",
+          "#marvin"
+        ],
+        "marvin_task": "marvin_financial_business_intelligence"
+      }
+    },
+    {
+      "source_id": "youtube_videos",
+      "source_type": "external",
+      "source_name": "YouTube Videos",
+      "source_category": "video",
+      "enabled": true,
+      "priority": 4,
+      "schedule_interval_hours": 12,
+      "last_syphon": null,
+      "metadata": {
+        "description": "YouTube video intelligence gathering - external",
+        "script": "scripts/python/jarvis_syphon_youtube_financial_creators.py",
+        "hk47_task": "hk47_youtube_intelligence_retrieval",
+        "tags": [
+          "#external",
+          "#youtube",
+          "#video",
+          "#intelligence"
+        ]
+      }
+    },
+    {
+      "source_id": "youtube_channels",
+      "source_type": "external",
+      "source_name": "YouTube Channels",
+      "source_category": "video",
+      "enabled": true,
+      "priority": 4,
+      "schedule_interval_hours": 24,
+      "last_syphon": null,
+      "metadata": {
+        "description": "YouTube channel monitoring and intelligence - external",
+        "script": "scripts/python/ingest_youtube_channel_syphon.py",
+        "hk47_task": "hk47_youtube_channel_intelligence",
+        "tags": [
+          "#external",
+          "#youtube",
+          "#channel",
+          "#intelligence"
+        ]
+      }
+    },
+    {
+      "source_id": "white_papers",
+      "source_type": "external",
+      "source_name": "White Papers & Documents",
+      "source_category": "document",
+      "enabled": true,
+      "priority": 5,
+      "schedule_interval_hours": 24,
+      "last_syphon": null,
+      "metadata": {
+        "description": "White papers, research papers, and document intelligence - external",
+        "script": "scripts/python/jarvis_syphon_complete_web_extraction.py",
+        "hk47_task": "hk47_white_paper_intelligence_retrieval",
+        "tags": [
+          "#external",
+          "#whitepaper",
+          "#document",
+          "#research",
+          "#intelligence"
+        ]
+      }
+    },
+    {
+      "source_id": "external_apis",
+      "source_type": "external",
+      "source_name": "External APIs & Services",
+      "source_category": "api",
+      "enabled": true,
+      "priority": 6,
+      "schedule_interval_hours": 24,
+      "last_syphon": null,
+      "metadata": {
+        "description": "External APIs and services intelligence gathering - external",
+        "script": "scripts/python/syphon_system.py",
+        "hk47_task": "hk47_external_api_intelligence",
+        "tags": [
+          "#external",
+          "#api",
+          "#services",
+          "#intelligence"
+        ]
+      }
+    },
+    {
+      "source_id": "n8n_nas",
+      "source_type": "internal",
+      "source_name": "N8N on NAS",
+      "source_category": "automation",
+      "enabled": true,
+      "priority": 2,
+      "schedule_interval_hours": 6,
+      "last_syphon": null,
+      "metadata": {
+        "description": "N8N workflow automation on NAS - internal",
+        "host": "10.17.17.32",
+        "port": 5678,
+        "webhook_base": "http://10.17.17.32:5678/webhook",
+        "marvin_task": "marvin_n8n_nas_intelligence",
+        "tags": [
+          "#internal",
+          "#n8n",
+          "#nas",
+          "#automation",
+          "#marvin"
+        ]
+      }
+    },
+    {
+      "source_id": "communication_apps",
+      "source_type": "internal",
+      "source_name": "Communication Apps",
+      "source_category": "communication",
+      "enabled": true,
+      "priority": 2,
+      "schedule_interval_hours": 6,
+      "last_syphon": null,
+      "metadata": {
+        "description": "Communication apps (Discord, Slack, Teams, etc.) - internal",
+        "marvin_task": "marvin_communication_apps_intelligence",
+        "tags": [
+          "#internal",
+          "#communication",
+          "#apps",
+          "#marvin"
+        ]
+      }
+    },
+    {
+      "source_id": "sms_messaging",
+      "source_type": "internal",
+      "source_name": "SMS/Messaging",
+      "source_category": "communication",
+      "enabled": false,
+      "priority": 3,
+      "schedule_interval_hours": 6,
+      "last_syphon": null,
+      "metadata": {
+        "description": "SMS and messaging intelligence - internal (not set up yet)",
+        "marvin_task": "marvin_sms_messaging_intelligence",
+        "tags": [
+          "#internal",
+          "#sms",
+          "#messaging",
+          "#marvin",
+          "#not_setup"
+        ]
+      }
+    }
+  ],
+  "schedule": {
+    "default_interval_hours": 6,
+    "internal_sources_interval_hours": 24,
+    "external_sources_interval_hours": 6,
+    "cron_schedule": "0 */6 * * *",
+    "description": "Runs every 6 hours, SYPHONs both internal and external sources"
+  },
+  "integration": {
+    "nas_kronscheduler": {
+      "host": "kronscheduler.lesnewski.local",
+      "enabled": true,
+      "description": "NAS KronScheduler integration for scheduled task execution"
+    },
+    "nas_email_hub": {
+      "host": "email-hub.lesnewski.local",
+      "n8n_webhook": "http://10.17.17.32:5678/webhook/email/hub/receive",
+      "enabled": true,
+      "description": "NAS Email Hub integration via N8N"
+    },
+    "n8n": {
+      "host": "10.17.17.32",
+      "port": 5678,
+      "enabled": true,
+      "description": "N8N workflow integration"
+    }
+  }
+}

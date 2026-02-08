@@ -1,0 +1,29 @@
+{
+  "outlook_nas_hub_account": {
+    "account_name": "NAS Mail Hub (Hybrid Email)",
+    "email_address": "mlesn@homelab.lesnewski.local",
+    "account_type": "IMAP",
+    "display_name": "Company Email Hub",
+    "imap": {
+      "server": "10.17.17.32",
+      "port": 993,
+      "encryption": "SSL/TLS",
+      "username": "mlesn",
+      "password_note": "Use NAS MailPlus account password"
+    },
+    "smtp": {
+      "server": "10.17.17.32",
+      "port": 587,
+      "encryption": "STARTTLS",
+      "username": "mlesn",
+      "password_note": "Use NAS MailPlus account password",
+      "requires_authentication": true
+    },
+    "notes": [
+      "This account receives all emails from Gmail and ProtonMail",
+      "Emails are synced to NAS Mail Hub automatically",
+      "Outlook connects directly to NAS Mail Hub, not to Gmail/ProtonMail"
+    ]
+  },
+  "generated_at": "2026-01-05T22:30:28.958157"
+}

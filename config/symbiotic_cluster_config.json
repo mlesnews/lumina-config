@@ -1,0 +1,85 @@
+{
+  "version": "1.0.0",
+  "name": "Symbiotic Cluster Configuration",
+  "description": "Configuration for Symbiotic Cluster Coordinator (Iron Legion)",
+  "last_updated": "2025-01-24",
+  "ssot": true,
+  "ssot_location": "config/symbiotic_cluster_config.json",
+  "cluster": {
+    "cluster_id": "iron_legion_symbiotic",
+    "mode": "symbiotic",
+    "target_utilization": 97.0,
+    "balance_interval": 30,
+    "health_check_interval": 60
+  },
+  "hosts": {
+    "local": {
+      "host_id": "local",
+      "endpoint": "http://localhost:11437",
+      "description": "Local host (Ollama on local machine)",
+      "priority": "balanced"
+    },
+    "target": {
+      "host_id": "target",
+      "endpoint": "http://kaiju_no_8:11437",
+      "description": "Target host (Kaiju Iron Legion cluster)",
+      "priority": "balanced",
+      "alternate_endpoints": [
+        "http://lesnewski.local:11437",
+        "http://10.17.17.32:11437"
+      ]
+    }
+  },
+  "deployment": {
+    "deployment_timeout": 600,
+    "activation_timeout": 300,
+    "verification_retries": 3,
+    "auto_start": true,
+    "auto_restart": true
+  },
+  "execution": {
+    "monitoring_enabled": true,
+    "load_balancing_enabled": true,
+    "failover_enabled": true,
+    "metrics_collection": true,
+    "log_level": "INFO"
+  },
+  "resource_management": {
+    "target_utilization": 97.0,
+    "min_utilization": 85.0,
+    "max_utilization": 99.0,
+    "utilization_tolerance": 5.0,
+    "load_balance_threshold": 10.0
+  },
+  "failover": {
+    "enabled": true,
+    "automatic": true,
+    "timeout_seconds": 30,
+    "retry_attempts": 6,
+    "health_check_interval": 30
+  },
+  "monitoring": {
+    "health_check_interval": 60,
+    "metrics_collection_interval": 30,
+    "alert_thresholds": {
+      "cpu_usage": 95.0,
+      "memory_usage": 95.0,
+      "response_time_ms": 5000.0,
+      "error_rate": 10.0
+    }
+  },
+  "logging": {
+    "log_dir": "logs/symbiotic_cluster",
+    "log_level": "INFO",
+    "log_rotation": true,
+    "max_log_size_mb": 100,
+    "log_retention_days": 30
+  },
+  "_metadata": {
+    "documentation": "docs/system/SYMBIOTIC_CLUSTER_IRON_LEGION.md",
+    "deployment_script": "scripts/python/deploy_symbiotic_cluster.py",
+    "coordinator_script": "scripts/python/symbiotic_cluster_coordinator.py",
+    "maintained_by": "@JARVIS",
+    "notes": "Symbiotic cluster treats local and target hosts as one organism with 97% utilization target (@gandalf)"
+  }
+}

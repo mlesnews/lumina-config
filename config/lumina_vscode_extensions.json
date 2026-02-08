@@ -1,0 +1,129 @@
+{
+  "version": "1.0.0",
+  "name": "Lumina VS Code Extensions",
+  "description": "SINGLE SOURCE OF TRUTH (SSoT) for all required VS Code/Cursor marketplace extensions for the Lumina project",
+  "last_updated": "2025-12-09",
+  "source": "Lumina Project Configuration",
+  "ssot": true,
+  "ssot_location": "config/lumina_vscode_extensions.json",
+  "maintained_by": "Lumina Project",
+  "_metadata": {
+    "references": [
+      ".vscode/extensions.json - Auto-generated from this file",
+      "scripts/powershell/Install-LuminaExtensions.ps1 - Reads from this file"
+    ],
+    "deprecated_sources": [
+      "cfs-llc-env/scripts/python/standardize_vscode_extensions.py - OLD VERSION, DO NOT USE",
+      "cedarbrook-financial-services_llc-env/scripts/python/standardize_vscode_extensions.py - OLD VERSION, DO NOT USE"
+    ],
+    "documentation": "docs/system/LUMINA_VSCODE_EXTENSIONS_SSOT.md"
+  },
+  
+  "extensions": {
+    "python": {
+      "category": "Python Development",
+      "required": true,
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "ms-toolsai.jupyter",
+        "njpwerner.autodocstring"
+      ]
+    },
+    "javascript": {
+      "category": "JavaScript/TypeScript Support",
+      "required": true,
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-next"
+      ]
+    },
+    "data": {
+      "category": "Data Analysis Tools",
+      "required": true,
+      "extensions": [
+        "grapecity.gc-excelviewer",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers"
+      ]
+    },
+    "docker": {
+      "category": "Docker Support",
+      "required": true,
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "ms-vscode-remote.remote-containers"
+      ]
+    },
+    "git": {
+      "category": "Git Integration",
+      "required": true,
+      "extensions": [
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "donjayamanne.githistory"
+      ]
+    },
+    "productivity": {
+      "category": "Productivity Tools",
+      "required": true,
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "christian-kohler.path-intellisense",
+        "wayou.vscode-todo-highlight",
+        "vscode-icons-team.vscode-icons",
+        "coenraads.bracket-pair-colorizer-2"
+      ]
+    },
+    "remote": {
+      "category": "Remote Development",
+      "required": true,
+      "extensions": [
+        "ms-vscode-remote.remote-ssh"
+      ]
+    }
+  },
+  
+  "notes": {
+    "excluded_extensions": [
+      {
+        "id": "visualstudioexptteam.vscodeintellicode",
+        "reason": "Not available in Cursor marketplace",
+        "alternatives": []
+      },
+      {
+        "id": "ms-vscode-remote.remote-ssh-edit",
+        "reason": "Extension does not exist as separate package",
+        "alternatives": ["ms-vscode-remote.remote-ssh"]
+      }
+    ]
+  },
+  
+  "all_extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "charliermarsh.ruff",
+    "ms-toolsai.jupyter",
+    "njpwerner.autodocstring",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-next",
+    "grapecity.gc-excelviewer",
+    "ms-toolsai.jupyter-keymap",
+    "ms-toolsai.jupyter-renderers",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode-remote.remote-containers",
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+    "donjayamanne.githistory",
+    "streetsidesoftware.code-spell-checker",
+    "christian-kohler.path-intellisense",
+    "wayou.vscode-todo-highlight",
+    "vscode-icons-team.vscode-icons",
+    "coenraads.bracket-pair-colorizer-2",
+    "ms-vscode-remote.remote-ssh"
+  ]
+}
+

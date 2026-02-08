@@ -1,0 +1,81 @@
+{
+  "backend": "ollama",
+  "base_url": "http://localhost:11434",
+  "iron_legion_url": "http://localhost:11437",
+  "model": "llama3.2:11b",
+  "primary_model": "codellama:13b",
+  "secondary_model": "llama3.2:11b",
+  "lightweight_model": "qwen2.5-coder:1.5b-base",
+  "timeout": 300,
+  "temperature": 0.7,
+  "max_tokens": 8192,
+  "enabled": true,
+  "use_iron_legion": true,
+  "note": "Using LOCAL AI resources - no external API calls! Based on comprehensive infrastructure research.",
+  "endpoints": {
+    "priority_order": [
+      {
+        "name": "KAIJU IRON LEGION",
+        "description": "Full 7-model cluster on KAIJU machine (best performance)",
+        "endpoints": [
+          "http://kaiju_no_8:11437",
+          "http://lesnewski.local:11437",
+          "http://10.17.17.32:11437"
+        ],
+        "requires": "KAIJU machine powered on and accessible"
+      },
+      {
+        "name": "Iron Legion Router",
+        "description": "Smart routing based on job characteristics",
+        "endpoints": [
+          "http://localhost:3008"
+        ],
+        "requires": "Docker cluster running"
+      },
+      {
+        "name": "Iron Legion Load Balancer",
+        "description": "Simple load balancing across 7-model cluster",
+        "endpoints": [
+          "http://localhost:3000"
+        ],
+        "requires": "Docker cluster running",
+        "note": "Port 3000 - 'I Love You 3000!'"
+      },
+      {
+        "name": "Local Cluster",
+        "description": "Local cluster endpoint",
+        "endpoints": [
+          "http://localhost:11437"
+        ],
+        "requires": "Local cluster running"
+      },
+      {
+        "name": "Docker Ollama",
+        "description": "Single instance fallback",
+        "endpoints": [
+          "http://localhost:11434"
+        ],
+        "requires": "Docker service 'cfs-ollama' running"
+      }
+    ]
+  },
+  "docker_setup": {
+    "ollama": "Docker Compose service 'cfs-ollama' on port 11434",
+    "iron_legion_cluster": "7-model Docker cluster (ports 3001-3007)",
+    "iron_legion_loadbalancer": "Load balancer on port 3000",
+    "iron_legion_router": "Smart router on port 3008",
+    "start_command": "docker-compose up -d ollama",
+    "models": "Models should already be pulled in Docker container"
+  },
+  "integration": {
+    "uses_existing_docker": true,
+    "uses_iron_legion_cluster": true,
+    "uses_kaiju_iron_legion": true,
+    "uses_symbiotic_cluster": true,
+    "fallback_to_docker_ollama": true,
+    "documentation": "docs/INFRASTRUCTURE_RESEARCH_COMPLETE.md"
+  },
+  "force_local_only": true,
+  "block_cloud_apis": true,
+  "emergency_cost_control": true
+}

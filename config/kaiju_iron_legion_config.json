@@ -1,0 +1,126 @@
+{
+  "version": "1.0.0",
+  "name": "KAIJU IRON LEGION Configuration",
+  "description": "LOCAL LLM cluster running on KAIJU machine (NOT remote/cloud)",
+  "last_updated": "2025-12-27",
+  
+  "cluster_info": {
+    "name": "KAIJU IRON LEGION",
+    "type": "local_cluster",
+    "location": "KAIJU machine",
+    "is_local": true,
+    "is_remote": false,
+    "is_cloud": false,
+    "engine": "Ollama",
+    "protocol": "HTTP REST API (Ollama-compatible)"
+  },
+
+  "endpoints": {
+    "primary": "http://kaiju_no_8:11437",
+    "domain": "http://lesnewski.local:11437",
+    "localhost": "http://localhost:11437",
+    "ip_localhost": "http://127.0.0.1:11437",
+    "notes": "Use 'primary' or 'domain' for remote access from laptop/desktop. Use 'localhost' variants when accessing directly on KAIJU machine."
+  },
+
+  "models": {
+    "codellama:13b": {
+      "mark": "Mark I",
+      "purpose": "Primary code generation",
+      "size": "13B",
+      "priority": "highest"
+    },
+    "llama3.2:11b": {
+      "mark": "Mark II",
+      "purpose": "Secondary general",
+      "size": "11B",
+      "priority": "high"
+    },
+    "qwen2.5-coder:1.5b-base": {
+      "mark": "Mark III",
+      "purpose": "Lightweight quick",
+      "size": "1.5B",
+      "priority": "medium"
+    },
+    "llama3:8b": {
+      "mark": "Mark IV",
+      "purpose": "General purpose",
+      "size": "8B",
+      "priority": "medium",
+      "alternate_names": ["llama3"]
+    },
+    "mistral:7b": {
+      "mark": "Mark V",
+      "purpose": "General reasoning",
+      "size": "7B",
+      "priority": "medium",
+      "alternate_names": ["mistral"]
+    },
+    "mixtral:8x7b": {
+      "mark": "Mark VI",
+      "purpose": "High complexity",
+      "size": "47B",
+      "priority": "high",
+      "alternate_names": ["mixtral-8x7b"]
+    },
+    "gemma:2b": {
+      "mark": "Mark VII",
+      "purpose": "Lightweight fallback",
+      "size": "2B",
+      "priority": "low",
+      "alternate_names": ["gemma-2b"]
+    }
+  },
+
+  "access": {
+    "network_requirements": [
+      "KAIJU machine must be powered on",
+      "Client and KAIJU on same local network",
+      "Hostname 'kaiju_no_8' must resolve (or use IP/domain)",
+      "Port 11437 must be accessible (firewall)"
+    ],
+    "from_laptop_desktop": {
+      "endpoint": "http://kaiju_no_8:11437",
+      "alternatives": [
+        "http://lesnewski.local:11437",
+        "http://10.17.17.32:11437"
+      ]
+    },
+    "from_kaiju_machine": {
+      "endpoint": "http://localhost:11437",
+      "alternatives": [
+        "http://127.0.0.1:11437"
+      ]
+    }
+  },
+
+  "characteristics": {
+    "privacy": "All data stays on local network",
+    "latency": "Very low (local network)",
+    "cost": "No cloud API costs",
+    "control": "Full control over models and data",
+    "availability": "Requires KAIJU to be running",
+    "scalability": "Limited by KAIJU hardware resources"
+  },
+
+  "troubleshooting": {
+    "connection_failed": [
+      "Verify KAIJU is powered on",
+      "Check network connectivity: ping kaiju_no_8",
+      "Verify Ollama is running on KAIJU",
+      "Check firewall allows port 11437",
+      "Try alternative endpoints (IP address, domain)"
+    ],
+    "models_not_found": [
+      "Pull models on KAIJU: ollama pull codellama:13b",
+      "Check model list: curl http://kaiju_no_8:11437/api/tags",
+      "Verify model files exist on KAIJU"
+    ],
+    "slow_performance": [
+      "Check KAIJU system resources",
+      "Use smaller/quantized models",
+      "Limit concurrent requests",
+      "Check network latency"
+    ]
+  }
+}

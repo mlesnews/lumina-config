@@ -1,0 +1,23 @@
+{
+  "app_name": "Synology DSM SSO",
+  "identifier_uris": [
+    "https://synology-dsm.local",
+    "https://dsm.local"
+  ],
+  "reply_urls": [
+    "https://10.17.17.32:5001/portal/sso/acs",
+    "https://10.17.17.32:5001/webapi/auth.cgi"
+  ],
+  "required_permissions": [
+    "User.Read",
+    "openid",
+    "profile",
+    "email"
+  ],
+  "saml_settings": {
+    "entity_id": "https://10.17.17.32:5001",
+    "assertion_consumer_service_url": "https://10.17.17.32:5001/portal/sso/acs",
+    "single_logout_service_url": "https://10.17.17.32:5001/portal/sso/sls"
+  },
+  "note": "You'll need a verified domain in Azure AD. If you don't have one, use a placeholder URL and update after domain verification."
+}

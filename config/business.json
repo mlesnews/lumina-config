@@ -1,0 +1,45 @@
+{
+  "business": {
+    "name": "[COMPANY_NAME]",
+    "legal_name": "[LEGAL_NAME]",
+    "ein": "[REDACTED - Stored in Azure Vault]",
+    "entity_type": "[LLC/CORP/etc]",
+    "founded_date": "[DATE]",
+    "address": {
+      "street": "[REDACTED - Stored in Azure Vault]",
+      "city": "[CITY]",
+      "state": "[STATE]",
+      "zip": "[ZIP]"
+    },
+    "contact": {
+      "phone": "[REDACTED - Stored in Azure Vault]",
+      "email": "[REDACTED - Stored in Azure Vault]",
+      "website": "[WEBSITE]"
+    }
+  },
+  "financial": {
+    "accounting_software": "[SOFTWARE_NAME]",
+    "fiscal_year_end": "[MONTH/DAY]",
+    "currency": "USD",
+    "tax_id": "[REDACTED - Stored in Azure Vault]"
+  },
+  "operations": {
+    "timezone": "America/New_York",
+    "business_hours": {
+      "monday": "9:00 AM - 5:00 PM",
+      "tuesday": "9:00 AM - 5:00 PM",
+      "wednesday": "9:00 AM - 5:00 PM",
+      "thursday": "9:00 AM - 5:00 PM",
+      "friday": "9:00 AM - 5:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    }
+  },
+  "security": {
+    "credential_storage": "Azure Key Vault",
+    "vault_url": "[REDACTED - Stored in Azure Vault]",
+    "redaction_policy": "enforced"
+  },
+  "created": "2026-01-16T05:54:21.241439",
+  "note": "All sensitive information stored in Azure Key Vault. See SECURITY_REDACTION_POLICY.md"
+}

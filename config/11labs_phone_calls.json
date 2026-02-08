@@ -1,0 +1,75 @@
+{
+  "description": "Phone call handling with 11Labs voice AI",
+  "incoming_calls": {
+    "workflow": [
+      "1. Receive incoming call (Twilio/API)",
+      "2. Answer call automatically",
+      "3. Use 11Labs for voice greeting",
+      "4. Transcribe caller speech (STT)",
+      "5. Process through SYPHON for intent",
+      "6. Generate response using 11Labs TTS",
+      "7. Speak response to caller",
+      "8. Handle call routing/actions",
+      "9. Store call transcript in Holocron"
+    ],
+    "features": {
+      "auto_answer": true,
+      "voice_greeting": true,
+      "call_screening": true,
+      "call_routing": true,
+      "voicemail_transcription": true,
+      "call_recording": true
+    },
+    "greeting_templates": {
+      "default": "Hello, this is an automated assistant. How can I help you?",
+      "business_hours": "Thank you for calling. This is an automated assistant. Please state your name and the reason for your call.",
+      "after_hours": "Thank you for calling. We're currently outside business hours. Please leave a message and we'll get back to you."
+    }
+  },
+  "outgoing_calls": {
+    "workflow": [
+      "1. Trigger outgoing call (schedule/event)",
+      "2. Generate call script using AI",
+      "3. Use 11Labs to create voice audio",
+      "4. Place call via Twilio/API",
+      "5. Play 11Labs voice message",
+      "6. Listen for response (STT)",
+      "7. Process response through SYPHON",
+      "8. Generate follow-up using 11Labs",
+      "9. Continue conversation or end call",
+      "10. Store call record in Holocron"
+    ],
+    "use_cases": [
+      "Appointment reminders",
+      "Follow-up calls",
+      "Information delivery",
+      "Automated check-ins"
+    ]
+  },
+  "voice_settings": {
+    "phone_voice": {
+      "voice": "phone_voice",
+      "speed": 0.95,
+      "pitch": 0.0,
+      "stability": 0.7,
+      "similarity_boost": 0.85
+    },
+    "conversational": {
+      "enable_interruptions": true,
+      "response_time": "real_time",
+      "natural_pauses": true
+    }
+  },
+  "integration": {
+    "twilio": {
+      "description": "Twilio for call handling",
+      "webhook_url": "http://10.17.17.32:5678/webhook/11labs/phone",
+      "credentials": "stored_in_azure_vault"
+    },
+    "11labs": {
+      "api": "https://api.elevenlabs.io/v1",
+      "conversational_ai": true,
+      "real_time_voice": true
+    }
+  }
+}

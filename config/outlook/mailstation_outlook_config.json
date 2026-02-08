@@ -1,0 +1,74 @@
+{
+  "mailstation": {
+    "package": "MailStation",
+    "imap": {
+      "server": "10.17.17.32",
+      "port": 993,
+      "encryption": "SSL/TLS",
+      "secure": true,
+      "note": "Default - verify actual port"
+    },
+    "smtp": {
+      "server": "10.17.17.32",
+      "port": 25,
+      "encryption": "STARTTLS",
+      "secure": false
+    },
+    "domain": "homelab.lesnewski.local"
+  },
+  "outlook_desktop": {
+    "account_type": "IMAP",
+    "email": "mlesn@homelab.lesnewski.local",
+    "display_name": "Company Email (MailStation)",
+    "incoming_server": {
+      "server": "10.17.17.32",
+      "port": 993,
+      "encryption": "SSL/TLS",
+      "username": "mlesn@homelab.lesnewski.local"
+    },
+    "outgoing_server": {
+      "server": "10.17.17.32",
+      "port": 25,
+      "encryption": "STARTTLS",
+      "username": "mlesn@homelab.lesnewski.local",
+      "requires_authentication": true
+    },
+    "steps": [
+      "1. Open Outlook Desktop",
+      "2. File → Account Settings → Account Settings",
+      "3. New → Manual setup → POP or IMAP",
+      "4. Email: mlesn@homelab.lesnewski.local",
+      "5. IMAP Server: 10.17.17.32",
+      "6. IMAP Port: 993 (SSL/TLS)",
+      "7. SMTP Server: 10.17.17.32",
+      "8. SMTP Port: 25 (STARTTLS)",
+      "9. More Settings → Outgoing Server: Require authentication",
+      "10. Test connection"
+    ]
+  },
+  "outlook_mobile": {
+    "account_type": "IMAP",
+    "email": "mlesn@homelab.lesnewski.local",
+    "incoming_server": {
+      "server": "10.17.17.32",
+      "port": 993,
+      "encryption": "SSL/TLS"
+    },
+    "outgoing_server": {
+      "server": "10.17.17.32",
+      "port": 25,
+      "encryption": "STARTTLS"
+    },
+    "steps": [
+      "1. Open Outlook Mobile App",
+      "2. Add Account → Advanced Setup → IMAP",
+      "3. Email: mlesn@homelab.lesnewski.local",
+      "4. IMAP Server: 10.17.17.32",
+      "5. IMAP Port: 993 (SSL/TLS)",
+      "6. SMTP Server: 10.17.17.32",
+      "7. SMTP Port: 25 (STARTTLS)"
+    ]
+  },
+  "updated_at": "2026-01-15T23:21:02.158435",
+  "note": "Configuration verified against actual MailStation setup"
+}

@@ -1,0 +1,37 @@
+{
+  "mailplus": {
+    "imap": {
+      "server": "10.17.17.32",
+      "port": 993,
+      "encryption": "SSL/TLS",
+      "username": "mlesn@homelab.lesnewski.local"
+    },
+    "smtp": {
+      "server": "10.17.17.32",
+      "port": 587,
+      "encryption": "STARTTLS",
+      "username": "mlesn@homelab.lesnewski.local"
+    }
+  },
+  "outlook_desktop": {
+    "steps": [
+      "1. Open Outlook Desktop",
+      "2. File → Account Settings → Account Settings",
+      "3. New → Manual setup → POP or IMAP",
+      "4. Enter MailPlus settings (see mailplus section above)",
+      "5. More Settings → Outgoing Server: Require authentication",
+      "6. Advanced: IMAP 993 (SSL), SMTP 587 (STARTTLS)",
+      "7. Test connection"
+    ]
+  },
+  "outlook_mobile": {
+    "steps": [
+      "1. Open Outlook Mobile App",
+      "2. Add Account → Advanced Setup → IMAP",
+      "3. Email: mlesn@homelab.lesnewski.local",
+      "4. IMAP Server: 10.17.17.32, Port: 993 (SSL/TLS)",
+      "5. SMTP Server: 10.17.17.32, Port: 587 (STARTTLS)",
+      "6. Configure sync settings"
+    ]
+  }
+}

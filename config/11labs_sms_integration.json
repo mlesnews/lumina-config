@@ -1,0 +1,54 @@
+{
+  "description": "SMS processing with 11Labs voice integration",
+  "use_cases": [
+    "Read incoming SMS messages aloud",
+    "Convert SMS to voice notifications",
+    "Generate voice responses to SMS",
+    "Voice-to-SMS conversion (speak to send SMS)"
+  ],
+  "workflow": {
+    "incoming_sms": [
+      "1. Receive SMS via webhook/API",
+      "2. Process through SYPHON for intelligence",
+      "3. Convert SMS text to speech using 11Labs",
+      "4. Play audio notification or send to voice device",
+      "5. Store in Holocron with voice metadata"
+    ],
+    "outgoing_sms": [
+      "1. User speaks message (voice input)",
+      "2. Transcribe speech to text (STT)",
+      "3. Process through SYPHON",
+      "4. Generate SMS response using 11Labs voice (optional preview)",
+      "5. Send SMS via Twilio/API"
+    ],
+    "sms_voice_notifications": [
+      "1. Detect priority SMS",
+      "2. Generate voice alert using 11Labs",
+      "3. Play on connected devices (Alexa, speakers, etc.)",
+      "4. Log notification"
+    ]
+  },
+  "n8n_integration": {
+    "nodes": [
+      "Webhook (SMS incoming)",
+      "11Labs Text-to-Speech",
+      "HTTP Request (play audio)",
+      "SYPHON Process",
+      "Holocron Store"
+    ]
+  },
+  "voice_settings": {
+    "sms_reading": {
+      "voice": "sms_voice",
+      "speed": 1.0,
+      "pitch": 0.0,
+      "add_pauses": true
+    },
+    "sms_notifications": {
+      "voice": "sms_voice",
+      "speed": 1.1,
+      "pitch": 0.2,
+      "add_urgency": true
+    }
+  }
+}

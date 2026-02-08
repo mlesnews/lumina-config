@@ -1,0 +1,11 @@
+{
+  "device": "kaiju",
+  "type": "desktop",
+  "ip": "10.17.17.11",
+  "mcpServers": {},
+  "routing": {
+    "strategy": "hybrid_failover",
+    "primary": "nas",
+    "fallback": "localhost"
+  }
+}

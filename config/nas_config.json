@@ -1,0 +1,8 @@
+{
+  "host": "10.17.17.32",
+  "user": "mlesn",
+  "n8n_url": "http://10.17.17.32:5678",
+  "ssh_port": 22,
+  "ssh_key_path": null,
+  "password": null
+}

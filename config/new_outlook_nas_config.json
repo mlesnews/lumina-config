@@ -1,0 +1,17 @@
+{
+  "account_name": "mlesn@homelab.lesnewski.local",
+  "display_name": "Company Email (NAS)",
+  "imap": {
+    "server": "10.17.17.32",
+    "port": 993,
+    "encryption": "SSL/TLS",
+    "username": "mlesn@homelab.lesnewski.local"
+  },
+  "smtp": {
+    "server": "10.17.17.32",
+    "port": 587,
+    "encryption": "STARTTLS",
+    "username": "mlesn@homelab.lesnewski.local"
+  },
+  "notes": "New Outlook configuration - leaves old Outlook unchanged"
+}

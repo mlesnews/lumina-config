@@ -1,0 +1,67 @@
+{
+  "version": "1.0.0",
+  "name": "Lumina Browser Configuration",
+  "description": "Browser preferences and configuration for the Lumina project",
+  "last_updated": "2025-01-24",
+  "ssot": true,
+  "ssot_location": "config/lumina_browser_config.json",
+  
+  "preferred_browser": {
+    "name": "Neo",
+    "executable": "neo.exe",
+    "path": "D:\\Program Files\\Neo\\Application\\neo.exe",
+    "priority": 1,
+    "notes": "Neo browser is the preferred browser for all Lumina project operations. Installed at D:\\Program Files\\Neo"
+  },
+  
+  "browser_preferences": {
+    "primary": "Neo",
+    "fallback": [],
+    "excluded": [
+      "Chrome",
+      "chrome.exe",
+      "Google Chrome"
+    ],
+    "notes": "Chrome should not be used. Use Neo browser instead."
+  },
+  
+  "user_agents": {
+    "default": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Neo/1.0 Safari/537.36",
+    "notes": "User agent string for Neo browser"
+  },
+  
+  "browser_tools": {
+    "mcp_browser_extension": {
+      "enabled": true,
+      "preferred_browser": "Neo",
+      "notes": "MCP browser extension should use Neo browser"
+    },
+    "roo_code": {
+      "browserToolEnabled": true,
+      "preferred_browser": "Neo",
+      "browserViewportSize": "1280x800",
+      "notes": "Roo Code browser tool should use Neo"
+    }
+  },
+  
+  "protected_processes": {
+    "browsers": [
+      "neo.exe"
+    ],
+    "excluded": [
+      "chrome.exe",
+      "brave.exe"
+    ],
+    "notes": "Neo browser processes should be protected. Chrome processes should be excluded."
+  },
+  
+  "_metadata": {
+    "documentation": "docs/system/LUMINA_BROWSER_CONFIG.md",
+    "related_files": [
+      "config/kilo_code_optimized_config.json",
+      "cedarbrook-financial-services_llc-env/roo-code-extension/roo-code-settings.json"
+    ],
+    "notes": "This configuration ensures Neo browser is used instead of Chrome for all Lumina project operations"
+  }
+}
+

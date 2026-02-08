@@ -1,0 +1,101 @@
+{
+  "zuul_rotation_system": {
+    "version": "1.0.0",
+    "enabled": true,
+    "motto": "There is no static password, only ZUUL",
+
+    "rotation_intervals": {
+      "standard": 30,
+      "critical": 14,
+      "gating": 90,
+      "static": -1
+    },
+
+    "password_policy": {
+      "min_length": 32,
+      "max_length": 64,
+      "charset": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*",
+      "require_uppercase": true,
+      "require_lowercase": true,
+      "require_digits": true,
+      "require_symbols": true
+    },
+
+    "round_robin_groups": {
+      "alpha": {
+        "rotation_day": 1,
+        "patterns": ["3commas-*", "cursor-*"]
+      },
+      "beta": {
+        "rotation_day": 8,
+        "patterns": ["azure-*", "n8n-*"]
+      },
+      "gamma": {
+        "rotation_day": 15,
+        "patterns": ["elevenlabs-*", "huggingface-*", "kilocode-*"]
+      },
+      "delta": {
+        "rotation_day": 22,
+        "patterns": ["nas-*", "ldap-*", "mariadb-*"]
+      }
+    },
+
+    "excluded_from_keymaster": [
+      "protonpass-extra-password",
+      "protonpass-password",
+      "protonpass-username"
+    ],
+
+    "static_secrets": [
+      "recovery-*",
+      "master-seed-*",
+      "backup-key-*"
+    ],
+
+    "critical_secrets": [
+      "ldap-*",
+      "mariadb-root-*",
+      "nas-*-password"
+    ],
+
+    "vaults": {
+      "gatekeeper": {
+        "name": "Azure Key Vault",
+        "vault_name": "jarvis-lumina",
+        "priority": 1,
+        "type": "primary"
+      },
+      "keymaster": {
+        "name": "ProtonPass",
+        "cli_path": "C:\\Users\\mlesn\\AppData\\Local\\Programs\\ProtonPass\\pass-cli.exe",
+        "priority": 2,
+        "type": "secondary"
+      }
+    },
+
+    "schedule": {
+      "check_time": "03:00",
+      "timezone": "America/New_York",
+      "notify_before_days": 3,
+      "max_retry_attempts": 3,
+      "retry_delay_minutes": 30
+    },
+
+    "notifications": {
+      "on_rotation": ["@RR"],
+      "on_failure": ["@RR", "@MARVIN", "@HK-47"],
+      "on_rollback": ["@RR", "@MARVIN", "@HK-47", "The Professor"]
+    },
+
+    "audit": {
+      "log_path": "data/zuul_rotation/audit.jsonl",
+      "retain_days": 365
+    },
+
+    "compusec_oversight": {
+      "pre_rotation_check": "@MARVIN",
+      "post_rotation_verify": "@HK-47",
+      "threat_model": "@WOPR"
+    }
+  }
+}

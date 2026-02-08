@@ -1,0 +1,56 @@
+{
+  "name": "Incoming Call → 11Labs Voice AI",
+  "description": "Handle incoming phone calls with 11Labs",
+  "trigger": {
+    "type": "webhook",
+    "url": "http://10.17.17.32:5678/webhook/phone/11labs",
+    "method": "POST"
+  },
+  "nodes": [
+    {
+      "name": "Twilio Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "parameters": {
+        "path": "phone/11labs",
+        "httpMethod": "POST"
+      }
+    },
+    {
+      "name": "11Labs Conversational AI",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "https://api.elevenlabs.io/v1/convai/conversation",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "headerParameters": {
+          "xi-api-key": "={{ $env.ELEVENLABS_API_KEY }}"
+        },
+        "bodyParameters": {
+          "agent_id": "={{ $env.ELEVENLABS_AGENT_ID }}",
+          "phone_number": "={{ $json.From }}"
+        }
+      }
+    },
+    {
+      "name": "Call Transcription",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "// Store call transcript\nconst call = $input.item.json;\nreturn [{\n  json: {\n    call_sid: call.CallSid,\n    from: call.From,\n    to: call.To,\n    transcript: call.TranscriptionText || '',\n    duration: call.CallDuration,\n    timestamp: new Date().toISOString()\n  }\n}];"
+      }
+    },
+    {
+      "name": "SYPHON Process",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "http://localhost:8000/api/syphon/process",
+        "method": "POST",
+        "bodyParameters": {
+          "content": "={{ $json.transcript }}",
+          "source_type": "phone_call",
+          "call_metadata": "={{ JSON.stringify($json) }}"
+        }
+      }
+    }
+  ]
+}
