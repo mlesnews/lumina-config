@@ -2,7 +2,7 @@
   "business": {
     "name": "[COMPANY_NAME]",
     "legal_name": "[LEGAL_NAME]",
-    "ein": "[REDACTED - Stored in Azure Vault]",
+    "ein": "[VAULT: jarvis-lumina/cedarbrook-ein]",
     "entity_type": "[LLC/CORP/etc]",
     "founded_date": "[DATE]",
     "address": {

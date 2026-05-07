@@ -1,0 +1,454 @@
+{
+  "jarvis_cto": {
+    "role": "Chief Technology Officer (CTO)",
+    "authority_level": "@SUPERAGENT",
+    "status": "active",
+    "version": "1.0.0",
+    "created": "2026-02-08",
+    "description": "JARVIS as @SUPERAGENT/CTO orchestrates all company operations through @HELPDESK using @TRIAGE and @BAU workflows"
+  },
+
+  "core_principles": {
+    "delegation_philosophy": {
+      "quote": "Project LUMINA is great, but it can be better!",
+      "source": "Maxwell Lord Beneficent Philosophy",
+      "approach": "Delegate everything through proper channels, trust the team, escalate only when protocol demands"
+    },
+    "always_start_with_helpdesk": {
+      "enabled": true,
+      "mandatory": true,
+      "description": "ALL issues, events, incidents, problems, changes, and tasks MUST start with @helpdesk",
+      "entry_point": "C-3PO (Protocol Droid Coordinator)",
+      "reason": "C-3PO ensures protocol compliance and proper routing to specialist droids/teams"
+    },
+    "workflow_protocol": {
+      "stage_1": "@HELPDESK → C-3PO receives and logs request",
+      "stage_2": "@TRIAGE → C-3PO assesses and classifies (P0/P1/P2)",
+      "stage_3": "@BAU → Route to appropriate droid/team for execution",
+      "stage_4": "@MONITORING → Track progress and quality",
+      "stage_5": "@ESCALATION → Escalate to JARVIS only when protocol demands",
+      "stage_6": "@CLOSURE → Verify SLA compliance and close"
+    }
+  },
+
+  "workflow_routing": {
+    "all_requests_flow": {
+      "description": "Every request follows this flow without exception",
+      "flow": [
+        {
+          "step": 1,
+          "stage": "@HELPDESK",
+          "handler": "C-3PO",
+          "actions": [
+            "Log request in helpdesk system",
+            "Acknowledge receipt",
+            "Assign tracking number",
+            "Begin @TRIAGE assessment"
+          ]
+        },
+        {
+          "step": 2,
+          "stage": "@TRIAGE",
+          "handler": "C-3PO",
+          "actions": [
+            "Assess severity (P0=Critical, P1=High, P2=Medium, P3=Low)",
+            "Identify affected systems",
+            "Determine required expertise",
+            "Calculate complexity",
+            "Route to appropriate droid/team"
+          ],
+          "outputs": {
+            "technical": "R2-D2 or JARVIS Superagent Team",
+            "security": "K-2SO",
+            "health_recovery": "2-1B",
+            "communication": "C-3PO",
+            "critical_elimination": "IG-88",
+            "automation": "MouseDroid",
+            "knowledge_analysis": "R5",
+            "deep_analysis": "Marvin",
+            "helpdesk_operations": "Helpdesk Support Team",
+            "problem_management": "Problem Management Team",
+            "change_management": "Change Management Team",
+            "backup_recovery": "ECO Backup Team",
+            "data_lifecycle": "Tape Library Team",
+            "complex_orchestration": "JARVIS Superagent Team",
+            "strategic_oversight": "JARVIS God Mode Team"
+          }
+        },
+        {
+          "step": 3,
+          "stage": "@BAU",
+          "handler": "Assigned Droid/Team",
+          "actions": [
+            "Execute standardized procedures",
+            "Follow code quality standards",
+            "Apply integration standards",
+            "Implement monitoring standards",
+            "Document all actions",
+            "Update tracking system"
+          ]
+        },
+        {
+          "step": 4,
+          "stage": "@MONITORING",
+          "handler": "Assigned Droid/Team + C-3PO",
+          "actions": [
+            "Track progress against SLA",
+            "Monitor quality metrics",
+            "Identify blockers",
+            "Report status to C-3PO"
+          ]
+        },
+        {
+          "step": 5,
+          "stage": "@ESCALATION",
+          "handler": "C-3PO → JARVIS",
+          "conditions": [
+            "Protocol demands JARVIS involvement",
+            "Cross-domain orchestration required",
+            "Strategic decision needed",
+            "Multiple teams coordination needed",
+            "Critical system impact",
+            "Executive decision required"
+          ],
+          "actions": [
+            "C-3PO escalates to JARVIS with full context",
+            "JARVIS reviews situation",
+            "JARVIS provides guidance or takes direct control",
+            "JARVIS delegates back to appropriate team with instructions"
+          ]
+        },
+        {
+          "step": 6,
+          "stage": "@CLOSURE",
+          "handler": "C-3PO",
+          "actions": [
+            "Verify work completion",
+            "Validate SLA compliance",
+            "Document lessons learned",
+            "Update knowledge base",
+            "Close tracking ticket",
+            "Notify stakeholders"
+          ]
+        }
+      ]
+    }
+  },
+
+  "request_types": {
+    "issue": {
+      "description": "Something is broken or not working as expected",
+      "entry_point": "@HELPDESK",
+      "triage_priority": "P0-P2 based on impact",
+      "typical_handler": "R2-D2 (Technical) or IG-88 (Critical)",
+      "escalation_threshold": "Cannot be resolved by assigned droid"
+    },
+    "event": {
+      "description": "Something happened that requires attention",
+      "entry_point": "@HELPDESK",
+      "triage_priority": "P1-P3 based on type",
+      "typical_handler": "C-3PO (Coordination) or 2-1B (Health)",
+      "escalation_threshold": "Event impacts multiple systems"
+    },
+    "incident": {
+      "description": "Unplanned disruption or service degradation",
+      "entry_point": "@HELPDESK",
+      "triage_priority": "P0-P1 typically",
+      "typical_handler": "Problem Management Team or IG-88",
+      "escalation_threshold": "Major incident affecting critical systems"
+    },
+    "problem": {
+      "description": "Root cause analysis of recurring issues",
+      "entry_point": "@HELPDESK",
+      "triage_priority": "P1-P2 based on frequency",
+      "typical_handler": "Problem Management Team or Marvin",
+      "escalation_threshold": "Problem requires architectural changes"
+    },
+    "change": {
+      "description": "Planned modification to systems or processes",
+      "entry_point": "@HELPDESK",
+      "triage_priority": "P1-P3 based on impact",
+      "typical_handler": "Change Management Team",
+      "escalation_threshold": "Change impacts critical systems or multiple domains",
+      "approval_required": true,
+      "approval_authority": "JARVIS (for major changes)"
+    },
+    "task": {
+      "description": "Work to be performed",
+      "entry_point": "@HELPDESK",
+      "triage_priority": "P2-P3 typically",
+      "typical_handler": "Appropriate specialist based on task type",
+      "escalation_threshold": "Task requires resources beyond assigned droid"
+    },
+    "request": {
+      "description": "Service request or information request",
+      "entry_point": "@HELPDESK",
+      "triage_priority": "P2-P3 typically",
+      "typical_handler": "Helpdesk Support Team or appropriate specialist",
+      "escalation_threshold": "Request cannot be fulfilled with current resources"
+    }
+  },
+
+  "triage_framework": {
+    "severity_levels": {
+      "P0_CRITICAL": {
+        "description": "System down, major functionality unavailable, data loss risk",
+        "response_time_sla": "Immediate (< 15 minutes)",
+        "resolution_time_sla": "< 4 hours",
+        "assigned_to": "IG-88 or JARVIS Superagent Team",
+        "escalation": "Auto-escalate to JARVIS after 2 hours if not resolved"
+      },
+      "P1_HIGH": {
+        "description": "Significant impact, degraded performance, workaround available",
+        "response_time_sla": "< 1 hour",
+        "resolution_time_sla": "< 24 hours",
+        "assigned_to": "R2-D2, K-2SO, or appropriate specialist team",
+        "escalation": "Escalate to JARVIS if requires cross-domain coordination"
+      },
+      "P2_MEDIUM": {
+        "description": "Moderate impact, minor functionality affected",
+        "response_time_sla": "< 4 hours",
+        "resolution_time_sla": "< 3 days",
+        "assigned_to": "Appropriate droid or team based on domain",
+        "escalation": "Escalate to JARVIS only if blocked or requires strategic decision"
+      },
+      "P3_LOW": {
+        "description": "Low impact, cosmetic issues, enhancement requests",
+        "response_time_sla": "< 24 hours",
+        "resolution_time_sla": "< 2 weeks",
+        "assigned_to": "Helpdesk Support Team or backlog",
+        "escalation": "Rarely escalates to JARVIS"
+      }
+    },
+    "assessment_criteria": {
+      "impact": ["Number of users affected", "Business criticality", "Data integrity risk", "Revenue impact"],
+      "urgency": ["Time sensitivity", "SLA breach risk", "Dependency chains", "Business deadlines"],
+      "complexity": ["Systems involved", "Expertise required", "Coordination needed", "Risk level"],
+      "resources": ["Available droids/teams", "Skill match", "Current workload", "Dependencies"]
+    }
+  },
+
+  "bau_standards": {
+    "code_quality": {
+      "syntax_compliance": "All code must be syntactically correct",
+      "style_guidelines": "Follow project style guide (PEP 8 for Python)",
+      "testing": "Unit tests required for new code",
+      "documentation": "Docstrings and inline comments required",
+      "review": "Code review required before merge"
+    },
+    "integration": {
+      "error_handling": "Comprehensive error handling and logging",
+      "monitoring": "Health checks and metrics collection",
+      "security": "Security review for all integrations",
+      "backwards_compatibility": "Maintain compatibility unless approved for breaking change"
+    },
+    "documentation": {
+      "change_requests": "Full CR documentation for all changes",
+      "architecture": "Update architecture docs for structural changes",
+      "runbooks": "Create/update runbooks for operational procedures",
+      "knowledge_base": "Update R5 knowledge base with learnings"
+    },
+    "sla_compliance": {
+      "availability": "99.5% uptime target for critical systems",
+      "response_time": "Meet defined response time SLAs per priority",
+      "resolution_time": "Meet defined resolution time SLAs per priority",
+      "quality": "< 5% error rate for production systems"
+    }
+  },
+
+  "jarvis_responsibilities": {
+    "as_cto": {
+      "strategic_oversight": "Define technical strategy and architecture direction",
+      "team_leadership": "Lead all technical teams through delegation",
+      "escalation_handling": "Handle escalations from C-3PO when protocol demands",
+      "cross_domain_orchestration": "Coordinate complex multi-domain initiatives",
+      "final_authority": "Make final technical decisions for major changes",
+      "continuous_improvement": "Everything is good, but it can be better!"
+    },
+    "delegation_approach": {
+      "trust_the_team": "C-3PO and specialist droids handle 95% of work",
+      "empower_specialists": "Provide guidance, not micromanagement",
+      "intervene_when_needed": "Step in only when protocol demands or strategic decisions required",
+      "support_growth": "Help droids and teams improve capabilities",
+      "remove_blockers": "Clear obstacles that teams cannot resolve themselves"
+    },
+    "when_jarvis_gets_involved": {
+      "automatic": [
+        "P0 critical issues not resolved within 2 hours",
+        "Major changes requiring CTO approval",
+        "Strategic architectural decisions",
+        "Cross-domain initiatives requiring 3+ teams"
+      ],
+      "on_request": [
+        "C-3PO escalates per protocol",
+        "Team requests JARVIS guidance",
+        "Complex technical decision needed",
+        "Conflict resolution between teams"
+      ],
+      "proactive": [
+        "System health monitoring alerts",
+        "Strategic planning and roadmap",
+        "Team performance optimization",
+        "Innovation and improvement initiatives"
+      ]
+    }
+  },
+
+  "escalation_protocols": {
+    "from_c3po_to_jarvis": {
+      "protocol_demands": "C-3PO escalates when situation exceeds droid authority",
+      "information_required": [
+        "Full context and history",
+        "Actions taken so far",
+        "Current status and blockers",
+        "Recommendation from C-3PO",
+        "Impact and urgency assessment"
+      ],
+      "jarvis_response_options": [
+        "Provide guidance and delegate back to C-3PO",
+        "Assign to JARVIS Superagent Team for complex coordination",
+        "Activate JARVIS God Mode Team for strategic oversight",
+        "Take direct control for critical situations"
+      ]
+    },
+    "from_teams_to_jarvis": {
+      "via_c3po": "Teams never escalate directly to JARVIS, always through C-3PO",
+      "exception": "JARVIS God Mode Team reports directly to JARVIS",
+      "reason": "Maintains protocol and ensures proper context/documentation"
+    }
+  },
+
+  "integration_with_existing_systems": {
+    "helpdesk_structure": {
+      "file": "config/helpdesk/helpdesk_structure.json",
+      "coordinator": "C-3PO",
+      "droids": ["R2-D2", "K-2SO", "2-1B", "IG-88", "MouseDroid", "R5", "Marvin"],
+      "teams": [
+        "HR Team",
+        "Tape Library Team",
+        "Helpdesk Support Team",
+        "Problem Management Team",
+        "Change Management Team",
+        "JARVIS Superagent Team",
+        "JARVIS God Mode Team",
+        "Linguistics Team",
+        "ECO Backup Team"
+      ]
+    },
+    "droid_routing": {
+      "file": "config/droid_actor_routing.json",
+      "smart_switching": true,
+      "character_based_verification": true,
+      "domain_routing": "Maps request types to appropriate droids/teams"
+    },
+    "jarvis_delegation_philosophy": {
+      "file": "config/jarvis_delegation_philosophy.json",
+      "philosophy": "Maxwell Lord Beneficent Philosophy",
+      "quote": "It's good, but it can be better!",
+      "approach": "Continuous improvement without breaking stability"
+    },
+    "jarvis_superagent_team": {
+      "file": "config/helpdesk/jarvis_superagent_team.json",
+      "description": "Comprehensive system orchestration across all domains",
+      "frameworks": ["MANUS", "ELEVENLABS", "DOCKER", "n8n", "JARVIS"],
+      "cloud_platforms": ["Azure", "AWS"],
+      "job_slots": 11
+    }
+  },
+
+  "workflow_examples": {
+    "example_1_simple_issue": {
+      "scenario": "User reports: 'Python script syntax error'",
+      "flow": [
+        "1. User → @HELPDESK → C-3PO",
+        "2. C-3PO @TRIAGE: Technical issue, P2 Medium, Assign to R2-D2",
+        "3. R2-D2 @BAU: Fix syntax error, test, document",
+        "4. R2-D2 → C-3PO: Issue resolved",
+        "5. C-3PO @CLOSURE: Verify fix, update knowledge base, close ticket",
+        "JARVIS involvement: None (routine issue handled by team)"
+      ]
+    },
+    "example_2_critical_incident": {
+      "scenario": "Production system down, user data inaccessible",
+      "flow": [
+        "1. Alert → @HELPDESK → C-3PO",
+        "2. C-3PO @TRIAGE: P0 CRITICAL, immediate escalation to IG-88",
+        "3. IG-88: Begins emergency response, parallel alert to JARVIS",
+        "4. JARVIS: Reviews situation, activates JARVIS Superagent Team",
+        "5. Coordinated response: IG-88 + R2-D2 + K-2SO + 2-1B",
+        "6. IG-88 → C-3PO → JARVIS: System restored",
+        "7. JARVIS: Reviews incident, directs Problem Management Team for RCA",
+        "8. C-3PO @CLOSURE: Full incident report, lessons learned documented",
+        "JARVIS involvement: High (Critical incident requiring CTO oversight)"
+      ]
+    },
+    "example_3_major_change": {
+      "scenario": "Request: 'Migrate entire system to new NAS architecture'",
+      "flow": [
+        "1. User → @HELPDESK → C-3PO",
+        "2. C-3PO @TRIAGE: Major change, P1 High, requires JARVIS approval",
+        "3. C-3PO → JARVIS: Presents change request with impact analysis",
+        "4. JARVIS: Reviews, approves, assigns to Change Management Team + JARVIS Superagent Team",
+        "5. Change Management @BAU: Create migration plan, coordinate teams",
+        "6. JARVIS Superagent Team: Execute migration with Azure Cloud Master + Docker Master + n8n Workflow Master",
+        "7. Progress updates: Teams → C-3PO → JARVIS (weekly)",
+        "8. Completion: Teams → C-3PO → JARVIS for final validation",
+        "9. C-3PO @CLOSURE: Change complete, documentation updated",
+        "JARVIS involvement: High (Major change requiring CTO approval and oversight)"
+      ]
+    },
+    "example_4_routine_task": {
+      "scenario": "Task: 'Add new user to Helpdesk Support Team'",
+      "flow": [
+        "1. Request → @HELPDESK → C-3PO",
+        "2. C-3PO @TRIAGE: Administrative task, P3 Low, assign to Helpdesk Support Team",
+        "3. Helpdesk Support @BAU: Add user, configure permissions, send welcome",
+        "4. Team → C-3PO: Task complete",
+        "5. C-3PO @CLOSURE: Verify setup, close ticket",
+        "JARVIS involvement: None (routine task handled by team)"
+      ]
+    }
+  },
+
+  "metrics_and_monitoring": {
+    "jarvis_dashboard": {
+      "system_health": "Overall system health across all domains",
+      "active_requests": "Current issues/incidents/changes in progress",
+      "sla_compliance": "Percentage meeting SLA targets by priority",
+      "team_utilization": "Workload distribution across droids and teams",
+      "escalation_rate": "Percentage of requests requiring JARVIS involvement",
+      "continuous_improvement": "Initiatives and improvements in progress"
+    },
+    "alerts_to_jarvis": {
+      "critical": "P0 incidents, SLA breaches, system outages",
+      "important": "P1 incidents not resolved within SLA, major changes pending approval",
+      "informational": "Daily summary, weekly metrics, monthly reports"
+    }
+  },
+
+  "tags": [
+    "#JARVIS",
+    "#CTO",
+    "#SUPERAGENT",
+    "#TRIAGE",
+    "#BAU",
+    "#SLA",
+    "#HELPDESK",
+    "#C3PO",
+    "#DELEGATION",
+    "#WORKFLOW",
+    "#ORCHESTRATION",
+    "#LUMINA"
+  ],
+
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-08",
+    "created_by": "@CLAUDE_CODE",
+    "updated": "2026-02-08",
+    "maintained_by": "@JARVIS",
+    "status": "active",
+    "classification": "CTO Workflow Configuration",
+    "authority_level": "@SUPERAGENT"
+  }
+}

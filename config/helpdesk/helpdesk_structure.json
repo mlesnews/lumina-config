@@ -248,6 +248,15 @@
       ]
     }
   },
+  "jarvis_cto_workflow": {
+    "enabled": true,
+    "config_file": "config/jarvis_cto_workflow.json",
+    "description": "JARVIS as CTO delegates all work through @helpdesk using @TRIAGE and @BAU workflows",
+    "quick_reference": ".lumina/agents/JARVIS_CTO_QUICK_REFERENCE.md",
+    "all_requests_start_with": "@helpdesk (C-3PO)",
+    "escalation_to_jarvis": "Only when protocol demands",
+    "workflow_stages": ["@HELPDESK", "@TRIAGE", "@BAU", "@MONITORING", "@ESCALATION", "@CLOSURE"]
+  },
   "workflow_routing": {
     "description": "C-3PO routes workflows to droids/teams based on specialty area",
     "routing_logic": {
